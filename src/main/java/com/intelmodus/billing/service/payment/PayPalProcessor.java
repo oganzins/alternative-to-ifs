@@ -9,4 +9,5 @@ public class PayPalProcessor implements PaymentProcessor {
 	public Receipt process(Purchase purchase) {
 		return new Receipt("Processed by PayPal...");
 	}
+
 }
