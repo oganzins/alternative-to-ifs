@@ -4,9 +4,9 @@ import com.intelmodus.billing.service.PaymentProcessor;
 import com.intelmodus.billing.service.Purchase;
 import com.intelmodus.billing.service.Receipt;
 
-public class GooglePayProcessor implements PaymentProcessor {
+class GooglePayProcessor implements PaymentProcessor {
 
-	public Receipt process(Purchase purchase) {
-		return new Receipt("Processed by Google Pay...");
-	}
+    public Receipt process(Purchase purchase) {
+        return new Receipt("Processed by Google Pay...");
+    }
 }
