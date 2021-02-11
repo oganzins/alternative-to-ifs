@@ -39,29 +39,4 @@ public class DefaultBillingServiceTest {
 
 	}
 
-	//@Test
-	public void usesPayPal() {
-		Receipt receipt = billingService.charge(purchase, PaymentGateway.PAYPAL);
-		assertThat(receipt.getPaymentMessage()).isEqualTo("Processed by PayPal...");
-	}
-
-	//@Test
-	public void usesGooglePay() {
-		Receipt receipt = billingService.charge(purchase, PaymentGateway.GOOGLE_PAY);
-		assertThat(receipt.getPaymentMessage()).isEqualTo("Processed by Google Pay...");
-	}
-
-	//@Test
-	public void usesShopify() {
-		Receipt receipt = billingService.charge(purchase, PaymentGateway.SHOPIFY);
-		assertThat(receipt.getPaymentMessage()).isEqualTo("Processed by Shopify...");
-	}
-
-	//@Test
-	public void failsWhenGatewayIsUnsupported() {
-		assertThatThrownBy(() -> billingService.charge(purchase, PaymentGateway.SKRILL))
-				.isInstanceOf(UnsupportedPaymentGateway.class)
-				.hasMessage("Unsupported payment gateway: SKRILL");
-	}
-
 }
